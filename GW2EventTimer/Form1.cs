@@ -19,10 +19,10 @@ namespace GW2EventTimer
         public MainForm()
         {
             InitializeComponent();
-            ServerClientTime();
+            ClientServerTime();
         }
 
-        private void ServerClientTime()
+        private void ClientServerTime()
         {
             ServerClientTimer = new System.Windows.Forms.Timer();
             ServerClientTimer.Tick += new EventHandler(ServerClientTimer_Tick);
@@ -32,7 +32,9 @@ namespace GW2EventTimer
 
         private void ServerClientTimer_Tick(object sender, EventArgs e)
         {
-            toolStripSystemTime.Text = DateTime.Now.ToString("HH:mm:ss tt");
+            TimeZoneInfo GWServer = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+            toolStripSystemTime.Text = DateTime.Now.ToString();
+            ToolStripServerTimeVariable.Text = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString();
         }
 
         private void BtnTimerSet_Click(object sender, EventArgs e)

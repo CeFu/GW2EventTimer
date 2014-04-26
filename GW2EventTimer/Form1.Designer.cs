@@ -37,12 +37,14 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSystemTime = new System.Windows.Forms.ToolStripLabel();
-            this.ServerClientTimer = new System.Windows.Forms.Timer(this.components);
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ServerClientTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripServerTime = new System.Windows.Forms.ToolStripLabel();
+            this.ToolStripServerTimeVariable = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,7 +88,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
             this.toolStripSystemTime,
-            this.toolStripSeparator1});
+            this.toolStripSeparator1,
+            this.ToolStripServerTime,
+            this.ToolStripServerTimeVariable});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(524, 25);
@@ -133,15 +137,27 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             // 
             // MenuExit
             // 
             this.MenuExit.Name = "MenuExit";
-            this.MenuExit.Size = new System.Drawing.Size(152, 22);
+            this.MenuExit.Size = new System.Drawing.Size(116, 22);
             this.MenuExit.Text = "Exit";
             this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
+            // 
+            // ToolStripServerTime
+            // 
+            this.ToolStripServerTime.Name = "ToolStripServerTime";
+            this.ToolStripServerTime.Size = new System.Drawing.Size(72, 22);
+            this.ToolStripServerTime.Text = "Server Time:";
+            // 
+            // ToolStripServerTimeVariable
+            // 
+            this.ToolStripServerTimeVariable.Name = "ToolStripServerTimeVariable";
+            this.ToolStripServerTimeVariable.Size = new System.Drawing.Size(120, 22);
+            this.ToolStripServerTimeVariable.Text = "Syncing System Time";
             // 
             // MainForm
             // 
@@ -181,6 +197,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuExit;
+        private System.Windows.Forms.ToolStripLabel ToolStripServerTime;
+        private System.Windows.Forms.ToolStripLabel ToolStripServerTimeVariable;
     }
 }
 
