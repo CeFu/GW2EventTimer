@@ -19,7 +19,15 @@ namespace GW2EventTimer
         public MainForm()
         {
             InitializeComponent();
-            ClientServerTime();
+            try
+            {
+                ClientServerTime();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: Failed to Initialize Sync's - Report to Dybbuk");
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void ClientServerTime()
@@ -32,9 +40,18 @@ namespace GW2EventTimer
 
         private void ServerClientTimer_Tick(object sender, EventArgs e)
         {
-            TimeZoneInfo GWServer = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-            toolStripSystemTime.Text = DateTime.Now.ToString();
-            ToolStripServerTimeVariable.Text = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString();
+            try
+            {
+                TimeZoneInfo GWServer = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
+                toolStripSystemTime.Text = DateTime.Now.ToString();
+                ToolStripServerTimeVariable.Text = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was an error - Report to Dybbuk");
+                MessageBox.Show(ex.ToString());
+            
+            }
         }
 
         private void BtnTimerSet_Click(object sender, EventArgs e)
