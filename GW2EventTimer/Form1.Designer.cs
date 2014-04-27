@@ -48,15 +48,26 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.ToolStripEvent = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripCurrentEvent = new System.Windows.Forms.ToolStripLabel();
-            this.LabelEventTest = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbMegaTimes = new System.Windows.Forms.TextBox();
+            this.cbMegaD = new System.Windows.Forms.CheckBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripNextEvent = new System.Windows.Forms.ToolStripLabel();
+            this.ToolStripNextCurrentEvent = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnTimerSet
             // 
-            this.BtnTimerSet.Location = new System.Drawing.Point(216, 296);
+            this.BtnTimerSet.Location = new System.Drawing.Point(402, 121);
             this.BtnTimerSet.Name = "BtnTimerSet";
             this.BtnTimerSet.Size = new System.Drawing.Size(75, 23);
             this.BtnTimerSet.TabIndex = 0;
@@ -67,7 +78,7 @@
             // LabelTime
             // 
             this.LabelTime.AutoSize = true;
-            this.LabelTime.Location = new System.Drawing.Point(297, 301);
+            this.LabelTime.Location = new System.Drawing.Point(110, 120);
             this.LabelTime.Name = "LabelTime";
             this.LabelTime.Size = new System.Drawing.Size(34, 13);
             this.LabelTime.TabIndex = 1;
@@ -75,7 +86,7 @@
             // 
             // tbMins
             // 
-            this.tbMins.Location = new System.Drawing.Point(110, 298);
+            this.tbMins.Location = new System.Drawing.Point(296, 123);
             this.tbMins.Name = "tbMins";
             this.tbMins.Size = new System.Drawing.Size(100, 20);
             this.tbMins.TabIndex = 2;
@@ -168,7 +179,10 @@
             // 
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripEvent,
-            this.ToolStripCurrentEvent});
+            this.ToolStripCurrentEvent,
+            this.toolStripSeparator2,
+            this.ToolStripNextEvent,
+            this.ToolStripNextCurrentEvent});
             this.toolStrip2.Location = new System.Drawing.Point(0, 49);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(524, 25);
@@ -187,27 +201,96 @@
             this.ToolStripCurrentEvent.Size = new System.Drawing.Size(96, 22);
             this.ToolStripCurrentEvent.Text = "Loading Events...";
             // 
-            // LabelEventTest
+            // groupBox1
             // 
-            this.LabelEventTest.AutoSize = true;
-            this.LabelEventTest.Location = new System.Drawing.Point(171, 189);
-            this.LabelEventTest.Name = "LabelEventTest";
-            this.LabelEventTest.Size = new System.Drawing.Size(77, 13);
-            this.LabelEventTest.TabIndex = 7;
-            this.LabelEventTest.Text = "Practice Event";
+            this.groupBox1.Controls.Add(this.tbMegaTimes);
+            this.groupBox1.Controls.Add(this.cbMegaD);
+            this.groupBox1.Controls.Add(this.LabelTime);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(480, 234);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // tbMegaTimes
+            // 
+            this.tbMegaTimes.Location = new System.Drawing.Point(113, 17);
+            this.tbMegaTimes.Name = "tbMegaTimes";
+            this.tbMegaTimes.ReadOnly = true;
+            this.tbMegaTimes.Size = new System.Drawing.Size(100, 20);
+            this.tbMegaTimes.TabIndex = 1;
+            // 
+            // cbMegaD
+            // 
+            this.cbMegaD.AutoSize = true;
+            this.cbMegaD.Location = new System.Drawing.Point(6, 19);
+            this.cbMegaD.Name = "cbMegaD";
+            this.cbMegaD.Size = new System.Drawing.Size(101, 17);
+            this.cbMegaD.TabIndex = 0;
+            this.cbMegaD.Text = "Mega Destoryer";
+            this.cbMegaD.UseVisualStyleBackColor = true;
+            this.cbMegaD.CheckedChanged += new System.EventHandler(this.cbMegaD_CheckedChanged);
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(12, 167);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(500, 330);
+            this.tabControl1.TabIndex = 9;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(492, 304);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(332, 246);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // ToolStripNextEvent
+            // 
+            this.ToolStripNextEvent.Name = "ToolStripNextEvent";
+            this.ToolStripNextEvent.Size = new System.Drawing.Size(66, 22);
+            this.ToolStripNextEvent.Text = "Next Event:";
+            // 
+            // ToolStripNextCurrentEvent
+            // 
+            this.ToolStripNextCurrentEvent.Name = "ToolStripNextCurrentEvent";
+            this.ToolStripNextCurrentEvent.Size = new System.Drawing.Size(96, 22);
+            this.ToolStripNextCurrentEvent.Text = "Loading Events...";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 535);
-            this.Controls.Add(this.LabelEventTest);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.tbMins);
-            this.Controls.Add(this.LabelTime);
             this.Controls.Add(this.BtnTimerSet);
             this.Name = "MainForm";
             this.Text = "[Phi] World Boss Timers";
@@ -217,6 +300,10 @@
             this.menuStrip1.PerformLayout();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +330,15 @@
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripLabel ToolStripEvent;
         public System.Windows.Forms.ToolStripLabel ToolStripCurrentEvent;
-        public System.Windows.Forms.Label LabelEventTest;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox tbMegaTimes;
+        private System.Windows.Forms.CheckBox cbMegaD;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripLabel ToolStripNextEvent;
+        private System.Windows.Forms.ToolStripLabel ToolStripNextCurrentEvent;
     }
 }
 

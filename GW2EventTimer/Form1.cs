@@ -15,14 +15,15 @@ namespace GW2EventTimer
     public partial class MainForm : Form
     {
         int counter = 10;
-        EventTimes ET = new EventTimes();
+        string CurrentServerTime;
 
         public MainForm()
         {
             InitializeComponent();
+            ClientServerTime();
             try
             {
-                ClientServerTime();
+                //ClientServerTime();
                 SetEventTimes();
             }
             catch (Exception ex)
@@ -34,7 +35,7 @@ namespace GW2EventTimer
 
         private void SetEventTimes()
         {
-           TimeSpan[] MegaDestroyer = {};
+
         }
 
         private void ClientServerTime()
@@ -51,13 +52,38 @@ namespace GW2EventTimer
             {
                 TimeZoneInfo GWServer = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
                 toolStripSystemTime.Text = DateTime.Now.ToString("HH:mm:ss");
+                CurrentServerTime = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString("HH:mm:ss");
                 ToolStripServerTimeVariable.Text = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString("HH:mm:ss");
+                UpdateTimers();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: Failed to set time labels? - Report to Dybbuk");
                 MessageBox.Show(ex.ToString());
             
+            }
+        }
+
+        private void UpdateTimers()
+        {
+            string[] EventTimes = { "16:00:00", "16:15:00", "16:30:00", "17:00:00", "17:15:00", "17:30:30", "17:45:00",
+                                    "18:00:00", "18:15:00", "18:30:00", "18:45:00", "19:00:00"};
+            string[] values = { "16:00:00", "12.12:12:12.12345678" };
+
+            //if (cbMegaD.Checked == true)
+            //{
+            //    foreach (string MD in MegaDestroyer)
+            //    {
+            //        TimeSpan dtimes = TimeSpan.Parse(MD);
+            //        LabelTime.Text = dtimes.ToString();
+            //        Thread.Sleep(5000);
+            //    }
+            //}
+
+            foreach (string value in EventTimes)
+            {
+                    TimeSpan interval = TimeSpan.Parse(value);
+                                        LabelTime.Text = interval.ToString();
             }
         }
 
@@ -93,6 +119,16 @@ namespace GW2EventTimer
         private void MenuExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbMegaD_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbMegaD.Checked == false){}
+            else if (cbMegaD.Checked == true)
+            {
+                tbMegaTimes.Text = CurrentServerTime;
+                UpdateTimers();
+            }
         }
     }
 }
