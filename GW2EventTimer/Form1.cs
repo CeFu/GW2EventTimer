@@ -15,6 +15,7 @@ namespace GW2EventTimer
     public partial class MainForm : Form
     {
         int counter = 10;
+        EventTimes ET = new EventTimes();
 
         public MainForm()
         {
@@ -22,12 +23,18 @@ namespace GW2EventTimer
             try
             {
                 ClientServerTime();
+                SetEventTimes();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: Failed to Initialize Sync's - Report to Dybbuk");
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void SetEventTimes()
+        {
+           TimeSpan[] MegaDestroyer = {};
         }
 
         private void ClientServerTime()
@@ -43,12 +50,12 @@ namespace GW2EventTimer
             try
             {
                 TimeZoneInfo GWServer = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
-                toolStripSystemTime.Text = DateTime.Now.ToString();
-                ToolStripServerTimeVariable.Text = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString();
+                toolStripSystemTime.Text = DateTime.Now.ToString("HH:mm:ss");
+                ToolStripServerTimeVariable.Text = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString("HH:mm:ss");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("There was an error - Report to Dybbuk");
+                MessageBox.Show("Error: Failed to set time labels? - Report to Dybbuk");
                 MessageBox.Show(ex.ToString());
             
             }

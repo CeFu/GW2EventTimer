@@ -38,15 +38,20 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSystemTime = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripServerTime = new System.Windows.Forms.ToolStripLabel();
+            this.ToolStripServerTimeVariable = new System.Windows.Forms.ToolStripLabel();
             this.ServerClientTimer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripServerTime = new System.Windows.Forms.ToolStripLabel();
-            this.ToolStripServerTimeVariable = new System.Windows.Forms.ToolStripLabel();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.ToolStripEvent = new System.Windows.Forms.ToolStripLabel();
+            this.ToolStripCurrentEvent = new System.Windows.Forms.ToolStripLabel();
+            this.LabelEventTest = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // BtnTimerSet
@@ -115,6 +120,18 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // ToolStripServerTime
+            // 
+            this.ToolStripServerTime.Name = "ToolStripServerTime";
+            this.ToolStripServerTime.Size = new System.Drawing.Size(72, 22);
+            this.ToolStripServerTime.Text = "Server Time:";
+            // 
+            // ToolStripServerTimeVariable
+            // 
+            this.ToolStripServerTimeVariable.Name = "ToolStripServerTimeVariable";
+            this.ToolStripServerTimeVariable.Size = new System.Drawing.Size(120, 22);
+            this.ToolStripServerTimeVariable.Text = "Syncing System Time";
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -147,23 +164,45 @@
             this.MenuExit.Text = "Exit";
             this.MenuExit.Click += new System.EventHandler(this.MenuExit_Click);
             // 
-            // ToolStripServerTime
+            // toolStrip2
             // 
-            this.ToolStripServerTime.Name = "ToolStripServerTime";
-            this.ToolStripServerTime.Size = new System.Drawing.Size(72, 22);
-            this.ToolStripServerTime.Text = "Server Time:";
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripEvent,
+            this.ToolStripCurrentEvent});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 49);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(524, 25);
+            this.toolStrip2.TabIndex = 6;
+            this.toolStrip2.Text = "toolStrip2";
             // 
-            // ToolStripServerTimeVariable
+            // ToolStripEvent
             // 
-            this.ToolStripServerTimeVariable.Name = "ToolStripServerTimeVariable";
-            this.ToolStripServerTimeVariable.Size = new System.Drawing.Size(120, 22);
-            this.ToolStripServerTimeVariable.Text = "Syncing System Time";
+            this.ToolStripEvent.Name = "ToolStripEvent";
+            this.ToolStripEvent.Size = new System.Drawing.Size(82, 22);
+            this.ToolStripEvent.Text = "Current Event:";
+            // 
+            // ToolStripCurrentEvent
+            // 
+            this.ToolStripCurrentEvent.Name = "ToolStripCurrentEvent";
+            this.ToolStripCurrentEvent.Size = new System.Drawing.Size(96, 22);
+            this.ToolStripCurrentEvent.Text = "Loading Events...";
+            // 
+            // LabelEventTest
+            // 
+            this.LabelEventTest.AutoSize = true;
+            this.LabelEventTest.Location = new System.Drawing.Point(171, 189);
+            this.LabelEventTest.Name = "LabelEventTest";
+            this.LabelEventTest.Size = new System.Drawing.Size(77, 13);
+            this.LabelEventTest.TabIndex = 7;
+            this.LabelEventTest.Text = "Practice Event";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(524, 535);
+            this.Controls.Add(this.LabelEventTest);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -176,6 +215,8 @@
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,6 +240,10 @@
         private System.Windows.Forms.ToolStripMenuItem MenuExit;
         private System.Windows.Forms.ToolStripLabel ToolStripServerTime;
         private System.Windows.Forms.ToolStripLabel ToolStripServerTimeVariable;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripLabel ToolStripEvent;
+        public System.Windows.Forms.ToolStripLabel ToolStripCurrentEvent;
+        public System.Windows.Forms.Label LabelEventTest;
     }
 }
 
