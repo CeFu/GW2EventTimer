@@ -48,15 +48,19 @@
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.ToolStripEvent = new System.Windows.Forms.ToolStripLabel();
             this.ToolStripCurrentEvent = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ToolStripNextEvent = new System.Windows.Forms.ToolStripLabel();
+            this.ToolStripNextCurrentEvent = new System.Windows.Forms.ToolStripLabel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbMegaTimes = new System.Windows.Forms.TextBox();
             this.cbMegaD = new System.Windows.Forms.CheckBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripNextEvent = new System.Windows.Forms.ToolStripLabel();
-            this.ToolStripNextCurrentEvent = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.ToolStripDailyReset = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.toolStrip2.SuspendLayout();
@@ -95,7 +99,7 @@
             // 
             this.statusStrip1.Location = new System.Drawing.Point(0, 513);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(524, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(596, 22);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -106,10 +110,11 @@
             this.toolStripSystemTime,
             this.toolStripSeparator1,
             this.ToolStripServerTime,
-            this.ToolStripServerTimeVariable});
+            this.ToolStripServerTimeVariable,
+            this.toolStripSeparator3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(524, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(596, 25);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -149,7 +154,7 @@
             this.toolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(524, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(596, 24);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,10 +187,13 @@
             this.ToolStripCurrentEvent,
             this.toolStripSeparator2,
             this.ToolStripNextEvent,
-            this.ToolStripNextCurrentEvent});
+            this.ToolStripNextCurrentEvent,
+            this.toolStripSeparator4,
+            this.toolStripLabel2,
+            this.ToolStripDailyReset});
             this.toolStrip2.Location = new System.Drawing.Point(0, 49);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(524, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(596, 25);
             this.toolStrip2.TabIndex = 6;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -200,6 +208,23 @@
             this.ToolStripCurrentEvent.Name = "ToolStripCurrentEvent";
             this.ToolStripCurrentEvent.Size = new System.Drawing.Size(96, 22);
             this.ToolStripCurrentEvent.Text = "Loading Events...";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // ToolStripNextEvent
+            // 
+            this.ToolStripNextEvent.Name = "ToolStripNextEvent";
+            this.ToolStripNextEvent.Size = new System.Drawing.Size(66, 22);
+            this.ToolStripNextEvent.Text = "Next Event:";
+            // 
+            // ToolStripNextCurrentEvent
+            // 
+            this.ToolStripNextCurrentEvent.Name = "ToolStripNextCurrentEvent";
+            this.ToolStripNextCurrentEvent.Size = new System.Drawing.Size(96, 22);
+            this.ToolStripNextCurrentEvent.Text = "Loading Events...";
             // 
             // groupBox1
             // 
@@ -258,33 +283,38 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(332, 246);
+            this.tabPage2.Size = new System.Drawing.Size(492, 304);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // toolStripSeparator2
+            // toolStripSeparator3
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // ToolStripNextEvent
+            // toolStripSeparator4
             // 
-            this.ToolStripNextEvent.Name = "ToolStripNextEvent";
-            this.ToolStripNextEvent.Size = new System.Drawing.Size(66, 22);
-            this.ToolStripNextEvent.Text = "Next Event:";
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // ToolStripNextCurrentEvent
+            // toolStripLabel2
             // 
-            this.ToolStripNextCurrentEvent.Name = "ToolStripNextCurrentEvent";
-            this.ToolStripNextCurrentEvent.Size = new System.Drawing.Size(96, 22);
-            this.ToolStripNextCurrentEvent.Text = "Loading Events...";
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(67, 22);
+            this.toolStripLabel2.Text = "Daily Reset:";
+            // 
+            // ToolStripDailyReset
+            // 
+            this.ToolStripDailyReset.Name = "ToolStripDailyReset";
+            this.ToolStripDailyReset.Size = new System.Drawing.Size(98, 22);
+            this.ToolStripDailyReset.Text = "Calculating Reset";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(524, 535);
+            this.ClientSize = new System.Drawing.Size(596, 535);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
@@ -339,6 +369,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripLabel ToolStripNextEvent;
         private System.Windows.Forms.ToolStripLabel ToolStripNextCurrentEvent;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripLabel ToolStripDailyReset;
     }
 }
 

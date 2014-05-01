@@ -16,26 +16,41 @@ namespace GW2EventTimer
     {
         int counter = 10;
         string CurrentServerTime;
+        string[] EventTimes = { "16:00:00", "16:15:00", "16:30:00", "17:00:00", "17:15:00", "17:30:30", "17:45:00",
+                                "18:00:00", "18:15:00", "18:30:00", "18:45:00", "19:00:00"};
+        string DailyReset = "05:00:00";
 
         public MainForm()
         {
             InitializeComponent();
             ClientServerTime();
-            try
-            {
-                //ClientServerTime();
-                SetEventTimes();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: Failed to Initialize Sync's - Report to Dybbuk");
-                MessageBox.Show(ex.ToString());
-            }
+            BossEvents();
+            //try
+            //{
+            //    //ClientServerTime();
+            // //   SetEventTimes();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: Failed to Initialize Sync's - Report to Dybbuk");
+            //    MessageBox.Show(ex.ToString());
+            //}
         }
 
-        private void SetEventTimes()
+        private void BossEvents()
         {
+            //foreach (string BossTimes in EventTimes)
+            //{
 
+            //    TimeSpan BossTimeInterval = TimeSpan.Parse(BossTimes);
+            //   // TimeSpan CurrentTime = TimeSpan.Parse(CurrentServerTime);
+
+            //    if (CurrentTime < BossTimeInterval)
+            //    {
+            //        TimeSpan duration = DateTime.Parse(BossTimes).Subtract(DateTime.Parse(CurrentServerTime));
+            //        LabelTime.Text = duration.ToString();
+            //    }
+            //}
         }
 
         private void ClientServerTime()
@@ -48,43 +63,57 @@ namespace GW2EventTimer
 
         private void ServerClientTimer_Tick(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
+            TimeSpan DailyTime = TimeSpan.Parse(DailyReset);
+
                 TimeZoneInfo GWServer = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
                 toolStripSystemTime.Text = DateTime.Now.ToString("HH:mm:ss");
                 CurrentServerTime = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString("HH:mm:ss");
                 ToolStripServerTimeVariable.Text = TimeZoneInfo.ConvertTime(System.DateTime.Now, TimeZoneInfo.Local, GWServer).ToString("HH:mm:ss");
-                UpdateTimers();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: Failed to set time labels? - Report to Dybbuk");
-                MessageBox.Show(ex.ToString());
+                //FindBoss();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error: Failed to set time labels? - Report to Dybbuk");
+            //    MessageBox.Show(ex.ToString());
             
-            }
+            //}
         }
 
-        private void UpdateTimers()
+        private void FindBoss()
         {
-            string[] EventTimes = { "16:00:00", "16:15:00", "16:30:00", "17:00:00", "17:15:00", "17:30:30", "17:45:00",
-                                    "18:00:00", "18:15:00", "18:30:00", "18:45:00", "19:00:00"};
-            string[] values = { "16:00:00", "12.12:12:12.12345678" };
+            //string[] EventTimes = { "16:00:00", "16:15:00", "16:30:00", "17:00:00", "17:15:00", "17:30:30", "17:45:00",
+            //                        "18:00:00", "18:15:00", "18:30:00", "18:45:00", "19:00:00"};
 
-            //if (cbMegaD.Checked == true)
+            //foreach (string BossTimes in EventTimes)
             //{
-            //    foreach (string MD in MegaDestroyer)
+            //    TimeSpan BossTimeInterval = TimeSpan.Parse(BossTimes);
+            //    TimeSpan ServerTimeInterval = TimeSpan.Parse(CurrentServerTime);
+            //}
+            ////string[] values = { "16:00:00", "12.12:12:12.12345678" };
+
+            ////if (cbMegaD.Checked == true)
+            ////{
+            ////    foreach (string MD in MegaDestroyer)
+            ////    {s
+            ////        TimeSpan dtimes = TimeSpan.Parse(MD);
+            ////        LabelTime.Text = dtimes.ToString();
+            ////        Thread.Sleep(5000);
+            ////    }
+            ////}
+
+            //foreach (string value in EventTimes)
+            //{
+            //    TimeSpan interval = TimeSpan.Parse(value);
+            //    LabelTime.Text = interval.ToString();
+            //    TimeSpan CurrentTime = TimeSpan.Parse(CurrentServerTime);
+
+            //    if (interval > CurrentTime && CurrentTime < interval)
             //    {
-            //        TimeSpan dtimes = TimeSpan.Parse(MD);
-            //        LabelTime.Text = dtimes.ToString();
-            //        Thread.Sleep(5000);
+            //        MessageBox.Show(interval.ToString());
             //    }
             //}
-
-            foreach (string value in EventTimes)
-            {
-                    TimeSpan interval = TimeSpan.Parse(value);
-                                        LabelTime.Text = interval.ToString();
-            }
         }
 
         private void BtnTimerSet_Click(object sender, EventArgs e)
@@ -123,11 +152,11 @@ namespace GW2EventTimer
 
         private void cbMegaD_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbMegaD.Checked == false){}
+            if (cbMegaD.Checked == false) { }
             else if (cbMegaD.Checked == true)
             {
                 tbMegaTimes.Text = CurrentServerTime;
-                UpdateTimers();
+                //UpdateTimers();
             }
         }
     }
